@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<assembly>
+    <id></id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <excludes>
+                <exclude>org.elasticsearch:elasticsearch</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+    <files>
+		<file>
+	      <outputDirectory></outputDirectory>	        
+	      <source>${project.basedir}/src/main/resources/plugin-descriptor.properties</source>
+          <filtered>true</filtered>        
+	    </file>
+  	</files>
+</assembly>
