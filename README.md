@@ -25,8 +25,7 @@ Elasticsearch 官网安装说明 https://www.elastic.co/guide/en/elasticsearch/g
 
 ####方法一
 ```markdown
-TO DO download from github
-
+$ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bosonnlp/files/185567/elasticsearch-analysis-bosonnlp-1.3.0-beta.zip
 ```
 ####方法二
 
@@ -38,14 +37,14 @@ TO DO download from github
     mvn clean package
     ```
     
-    构建后的项目包`elasticsearch-analysis-bosonnlp-{version}-plugin.zip`在`target/releases/`生成。
+    构建后的项目包`elasticsearch-analysis-bosonnlp-{version}.zip`在`target/releases/`生成。
 
 2. 安装插件
 
    通过 Elasticsearch 的 plugin 加载插件，在 Elasticsearch 根目录执行以下命令即可：
  
     ```
-    $ sudo bin/plugin install file:/root/path/to/your/elasticsearch-analysis-bosonnlp-{version}-plugin.zip
+    $ sudo bin/plugin install file:/root/path/to/your/elasticsearch-analysis-bosonnlp-{version}.zip
     ```
 
 ###设置
