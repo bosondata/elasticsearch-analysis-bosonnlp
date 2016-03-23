@@ -1,7 +1,7 @@
 # 玻森数据中文分析器Elasticsearch插件 (Beta版)
 
 ##概述
-Elasticsearch 是一个基于 lucene 的强大搜索服务器，也是企业最受欢迎的搜索引擎之一。对于中文搜索，Elasticsearch 自带的标准分析器（Standard Analyzer）显然不能满足大家的要求。因此[玻森数据](http://bosonnlp.com)开发了一款基于玻森中文分词的 Elasticsearch 的插件（BosonNLP Analysis for Elasticsearch）方便大家准确的使用中文搜索。
+Elasticsearch 是一个基于 Lucene 的强大搜索服务器，也是企业最受欢迎的搜索引擎之一。但是 ES 本身对中文分词和搜索比较局限。因为内置的分析器在处理中文分词时，只有两种方式：一种是单字（unigrams）形式，即简单粗暴的将中文的每一个汉字作为一个词（token）分开；另一种是两字（bigrams）的，也就是任意相邻的两个汉字作为一个词分开。这两种方式都不能很好的满足现在的中文分词需求，进而影响了搜索结果。因此玻森数据开发了一款基于玻森中文分词的 Elasticsearch 的插件（BosonNLP Analysis for Elasticsearch）方便大家准确的使用中文搜索。
 
 ##安装
 
@@ -25,7 +25,7 @@ Elasticsearch 官网安装说明 https://www.elastic.co/guide/en/elasticsearch/g
 
 ####方法一
 ```markdown
-$ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bosonnlp/files/185567/elasticsearch-analysis-bosonnlp-1.3.0-beta.zip
+$ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bosonnlp/releases/download/1.3.0-beta/elasticsearch-analysis-bosonnlp-1.3.0-beta.zip
 ```
 ####方法二
 
