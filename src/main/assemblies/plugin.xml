@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <assembly>
-    <id>plugin</id>
+    <id></id>
     <formats>
         <format>zip</format>
     </formats>
@@ -16,13 +16,10 @@
         </dependencySet>
     </dependencySets>
     <files>
-		<file>
-	      <outputDirectory>/</outputDirectory>	        
+        <file>
+	      <outputDirectory></outputDirectory>	        
 	      <source>${project.basedir}/src/main/resources/plugin-descriptor.properties</source>
-	    </file>
-	    <file>
-	      <outputDirectory>/</outputDirectory>	        
-	      <source>README.md</source>
-	    </file>
-  	</files>
+              <filtered>true</filtered>
+	</file>
+     </files>
 </assembly>
