@@ -2,7 +2,7 @@
 
 ##概述
 
-ElasticSearch 是一个基于 Lucene 的强大搜索服务器，也是企业最受欢迎的搜索引擎之一。但是 ES 本身对中文分词和搜索比较局限。因为内置的分析器在处理中文分词时，只有两种方式：一种是单字（unigrams）形式，即简单粗暴的将中文的每一个汉字作为一个词（token）分开；另一种是两字（bigrams）的，也就是任意相邻的两个汉字作为一个词分开。这两种方式都不能很好的满足现在的中文分词需求，进而影响了搜索结果。因此[玻森数据](http://bosonnlp.com)开发了一款基于玻森中文分词的 ElasticSearch 的插件（BosonNLP Analysis for ElasticSearch）方便大家准确的使用中文搜索。
+ElasticSearch 是一个基于 Lucene 的强大搜索服务器，也是企业最受欢迎的搜索引擎之一。但是 ES 本身对中文分词和搜索比较局限。因为内置的分析器在处理中文分词时，只有两种方式：一种是单字（unigrams）形式，即简单粗暴的将中文的每一个汉字作为一个词（token）分开；另一种是两字（bigrams）的，也就是任意相邻的两个汉字作为一个词分开。这两种方式都不能很好的满足现在的中文分词需求，进而影响了搜索结果。因此[玻森数据](http://bosonnlp.com)开发了一款基于玻森中文分词的 ElasticSearch 的插件（BosonNLP Analyzer for ElasticSearch）方便大家准确的使用中文搜索。
 
 ##安装
 
@@ -26,7 +26,7 @@ ElasticSearch 官网安装说明 https://www.elastic.co/guide/en/elasticsearch/g
 现在提供以下两种方式安装插件。
 
 ####方法一
-从 github 的链接直接下载插件，不同版本的 github 的链接已在对应版本的 README 中给出。
+从 github 的链接直接下载插件，不同版本的 github 的链接已在对应版本的 README 中给出。以下示例为 ES 2.0.0及以上的插件安装命令。
 ```bash
 $ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bosonnlp/releases/download/{version}/elasticsearch-analysis-bosonnlp-{version}.zip
 ```
@@ -423,7 +423,7 @@ index:
 
 ```
 
-- 添加定制的 anayzer
+- 添加定制的 analyzer
 
 在 `elasticsearch.yml` 文件中 analysis 下添加 analyzer， 并在 analyzer 中添加定制的 analyzer 的配置（下面例子中，我们把定制的 analyzer 命名为 filter_bosonnlp）：
 ```yaml
