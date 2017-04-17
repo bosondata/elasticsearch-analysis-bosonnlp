@@ -1,15 +1,15 @@
 # 玻森数据中文分析器ElasticSearch插件 (Beta版)
 
-##概述
+## 概述
 
 ElasticSearch 是一个基于 Lucene 的强大搜索服务器，也是企业最受欢迎的搜索引擎之一。但是 ES 本身对中文分词和搜索比较局限。因为内置的分析器在处理中文分词时，只有两种方式：一种是单字（unigrams）形式，即简单粗暴的将中文的每一个汉字作为一个词（token）分开；另一种是两字（bigrams）的，也就是任意相邻的两个汉字作为一个词分开。这两种方式都不能很好的满足现在的中文分词需求，进而影响了搜索结果。因此[玻森数据](http://bosonnlp.com)开发了一款基于玻森中文分词的 ElasticSearch 的插件（BosonNLP Analyzer for ElasticSearch）方便大家准确的使用中文搜索。
 
-##安装
+## 安装
 
-###依赖
+### 依赖
 ElasticSearch 官网安装说明 https://www.elastic.co/guide/en/elasticsearch/guide/1.x/_installing_elasticsearch.html
 
-###选择插件版本
+### 选择插件版本
 其对应的版本号和插件版本号如下：
 
 | BosonNLP version | ES Version    |
@@ -22,10 +22,10 @@ ElasticSearch 官网安装说明 https://www.elastic.co/guide/en/elasticsearch/g
 | 1.1.0-beta       | 2.0.0         |
 | 1.0.0-beta       | 1.7.x         |
 
-###安装插件
+### 安装插件
 现在提供以下两种方式安装插件。
 
-####方法一
+#### 方法一
 从 github 的链接直接下载插件，不同版本的 github 的链接已在对应版本的 README 中给出。以下示例为 ES 2.0.0及以上的插件安装命令。
 ```bash
 $ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bosonnlp/releases/download/{version}/elasticsearch-analysis-bosonnlp-{version}.zip
@@ -36,7 +36,7 @@ $ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bo
 $ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bosonnlp/releases/download/1.3.0-beta/elasticsearch-analysis-bosonnlp-1.3.0-beta.zip
 ```
     
-####方法二
+#### 方法二
 本地编译生成插件。
 
 1. 构建项目包
@@ -57,7 +57,7 @@ $ sudo bin/plugin install https://github.com/bosondata/elasticsearch-analysis-bo
     $ sudo bin/plugin install file:/root/path/to/your/elasticsearch-analysis-bosonnlp-{version}.zip
     ```
 
-###设置
+### 设置
 
 运行 ElasticSearch 之前需要在 config 文件夹中修改`elasticsearch.yml`来定义使用玻森中文分析器，并填写玻森 API_TOKEN 以及玻森分词 API 的地址，即在该文件结尾处添加：
 
@@ -105,9 +105,9 @@ index:
 
 设置完之后就可以运行 ElasticSearch 了，如果对该设置有新的改动，需要重启 ElasticSearch 才可生效。
 
-###测试
+### 测试
 
-####分词测试
+#### 分词测试
 运行 Elasiticsearch
 
 显示插件加载成功
@@ -174,7 +174,7 @@ curl -XGET 'localhost:9200/test/_analyze?analyzer=bosonnlp&pretty' -d '这是玻
 
 ```
 
-####搜索测试
+#### 搜索测试
 建立 mapping
 ```bash
 curl -XPUT 'localhost:9200/test/text/_mapping' -d'
@@ -365,10 +365,10 @@ curl -XPOST 'localhost:9200/test3/text/_search?pretty' -d '
 
 ```
 
-###配置 Token Filter
+### 配置 Token Filter
 现有的 BosonNLP 分析器没有内置 token filter，如果有过滤 Token 的需求，可以利用 BosonNLP Tokenizer 和 ES 提供的 token filter 搭建定制分析器。
 
-####步骤
+#### 步骤
 配置定制的 analyzer 有以下三个步骤：
 
 - 添加 BosonNLP tokenizer
